@@ -1,5 +1,5 @@
 install:
-	python -m pip install -Ue .[dev]
+	python -m pip install -Ue .[dev,pretty]
 
 .venv:
 	python -m venv .venv

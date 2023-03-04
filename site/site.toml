@@ -1,0 +1,19 @@
+hello = "world"
+
+[page]
+title = "Amethyst Reese"
+tagline = "software engineer, cat mom"
+body = """
+    This is a really cool site.
+    I hope you enjoy it.
+
+    How about a markdown [link](https://n7.gg)?
+"""
+footer = """
+    Bye!
+"""
+
+[[link]]
+url = "https://n7.gg"
+brand = "site"
+text = "Blog"
