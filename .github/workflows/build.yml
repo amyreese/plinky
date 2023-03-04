@@ -8,7 +8,7 @@ on:
   pull_request:
 
 jobs:
-  PACKAGE_NAME:
+  plinky:
     runs-on: ${{ matrix.os }}
     strategy:
       fail-fast: false

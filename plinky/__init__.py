@@ -1,10 +1,10 @@
-# Copyright AUTHOR_NAME
+# Copyright Amethyst Reese
 # Licensed under the MIT license
 
 """
-PROJECT_DESCRIPTION>
+Dynamic link site>
 """
 
 from .__version__ import __version__
 
-__author__ = "AUTHOR_NAME"
+__author__ = "Amethyst Reese"
