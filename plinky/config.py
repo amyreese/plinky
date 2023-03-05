@@ -27,6 +27,7 @@ def load_config(root: Path) -> Config:
                 text=tbl.pop("text", Link.text),
                 brand=tbl.pop("brand", Link.brand),
                 icon=tbl.pop("icon", Link.icon),
+                image=tbl.pop("image", Link.image),
                 extra=tbl,
             )
             for tbl in tables

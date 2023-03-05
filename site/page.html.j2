@@ -63,12 +63,18 @@
           {% for link in links %}
           <li>
             <a class="link" href="{{ link.url }}">
-              {% if link.brand %}
-              <i class="fa-brands fa-{{ link.brand }}"></i>
-              {% elif link.icon %}
-              <i class="fa-solid fa-{{ link.icon }}"></i>
-              {% endif %}
-              {{ link.text }}
+              <div class="icon">
+                {% if link.image %}
+                <img src="{{ link.image }}"/>
+                {% elif link.brand %}
+                <i class="fa-brands fa-{{ link.brand }}"></i>
+                {% elif link.icon %}
+                <i class="fa-solid fa-{{ link.icon }}"></i>
+                {% endif %}
+              </div>
+              <p>
+                {{ link.text }}
+              </p>
             </a>
           </li>
           {% endfor %}

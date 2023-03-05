@@ -11,6 +11,7 @@ class Link:
     text: str = ""
     brand: str = ""
     icon: str = ""
+    image: str = ""
     extra: dict[str, str] = field(default_factory=dict)
 
 
