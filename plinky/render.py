@@ -12,8 +12,12 @@ from .types import Config
 
 def render_site(config: Config) -> str:
     markdown = Markdown(extensions=["extra", "smarty"])
-    env = Environment(loader=FileSystemLoader([config.root]))
-    tpl = env.get_template("page.html")
+    env = Environment(
+        loader=FileSystemLoader([config.root]),
+        lstrip_blocks=True,
+        trim_blocks=True,
+    )
+    tpl = env.get_template("page.html.j2")
 
     page = config.page
     page = replace(
@@ -23,5 +27,9 @@ def render_site(config: Config) -> str:
         footer=markdown.convert(dedent(page.footer)),
     )
 
-    result = tpl.render(page=page, links=page.links)
+    result = tpl.render(
+        page=page,
+        socials=page.socials,
+        links=page.links,
+    )
     return result

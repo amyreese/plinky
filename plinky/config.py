@@ -18,34 +18,31 @@ def load_config(root: Path) -> Config:
     config_path = root / "site.toml"
     document = tomllib.loads(config_path.read_text())
 
-    error = False
+    def linkify(tables: list[dict[str, str]]) -> list[Link]:
+        if not isinstance(tables, list):
+            raise ValueError
+        return [
+            Link(
+                url=tbl.pop("url", Link.url),
+                text=tbl.pop("text", Link.text),
+                brand=tbl.pop("brand", Link.brand),
+                icon=tbl.pop("icon", Link.icon),
+                extra=tbl,
+            )
+            for tbl in tables
+        ]
 
-    links: list[Link] = []
-    link_tables = document.pop("link", [])
-    for tbl in link_tables:
-        url = tbl.pop("url", "")
-        text = tbl.pop("text", "")
-        brand = tbl.pop("brand", Link.brand)
-        icon = tbl.pop("icon", Link.icon)
-
-        if not url or not text:
-            LOG.error("url and text are required for links: %r", tbl)
-
-        links.append(Link(url=url, text=text, brand=brand, icon=icon, extra=tbl))
+    socials = linkify(document.pop("social", []))
+    links = linkify(document.pop("link", []))
 
     tbl = document.pop("page", {})
-    title = tbl.pop("title", Page.title)
-    image = tbl.pop("image", Page.image)
-    tagline = tbl.pop("tagline", Page.tagline)
-    body = tbl.pop("body", Page.body)
-    footer = tbl.pop("footer", Page.footer)
-
     page = Page(
-        title=title,
-        image=image,
-        tagline=tagline,
-        body=body,
-        footer=footer,
+        title=tbl.pop("title", Page.title),
+        image=tbl.pop("image", Page.image),
+        tagline=tbl.pop("tagline", Page.tagline),
+        body=tbl.pop("body", Page.body),
+        footer=tbl.pop("footer", Page.footer),
+        socials=socials,
         links=links,
         extra=tbl,
     )
@@ -53,8 +50,5 @@ def load_config(root: Path) -> Config:
     if document:
         keys = list(document.keys())
         LOG.warning("unsupported elements in site.toml: %r", keys)
-
-    if error:
-        raise RuntimeError("invalid site config")
 
     return Config(root=root, page=page)

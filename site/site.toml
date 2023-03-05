@@ -1,8 +1,6 @@
-hello = "world"
-
 [page]
-title = "Amethyst Reese"
-tagline = "software engineer, cat mom"
+title = "Example Page"
+tagline = "laugh it up fuzzball"
 body = """
     This is a really cool site.
     I hope you enjoy it.
@@ -13,7 +11,22 @@ footer = """
     Bye!
 """
 
+[[social]]
+url = "mailto:contact@omnilib.dev"
+text = "contact@omnilib.dev"
+icon = "envelope"
+
+[[social]]
+url = "https://github.com/omnilib"
+text = "@omnilib"
+brand = "github"
+
 [[link]]
-url = "https://n7.gg"
-brand = "site"
-text = "Blog"
+url = "https://omnilib.dev"
+icon = "house"
+text = "Omnilib Project"
+
+[[link]]
+url = "https://github.com/orgs/omnilib/repositories"
+icon = "code"
+text = "Project Repositories"

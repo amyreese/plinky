@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>{{ page.title }}</title>
+
+    <meta charset="utf-8" />
+    <meta name="description" content="{{ page.tagline }}" />
+    <meta name="author" content="{{ page.author }}" />
+
+    <!-- mobile friendly viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Font Awesome -->
+    <link href="fontawesome/css/fontawesome.css" rel="stylesheet" />
+    <link href="fontawesome/css/brands.css" rel="stylesheet" />
+    <link href="fontawesome/css/solid.css" rel="stylesheet" />
+
+    <link rel="stylesheet" href="css/plinky.css" />
+    <link rel="icon" type="image/png" href="images/favicon.png" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="avatar">
+        <img src="{{ page.image }}" />
+      </div>
+
+      <div class="title">
+        <h1>{{ page.title }}</h1>
+      </div>
+      <div class="tagline">
+        <p>{{ page.tagline }}</p>
+      </div>
+
+      {% if socials %}
+      <div class="socials">
+        <ul>
+          {% for link in socials %}
+          <li>
+            <a class="social" href="{{ link.url }}">
+              {% if link.brand %}
+              <i class="fa-brands fa-{{ link.brand }}"></i>
+              {% elif link.icon %}
+              <i class="fa-solid fa-{{ link.icon }}"></i>
+              {% else %}
+              {{ link.text }}
+              {% endif %}
+            </a>
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+      {% endif %}
+
+      {% if page.body %}
+      <div class="body">
+        {{ page.body }}
+      </div>
+      {% endif %}
+
+      {% if links %}
+      <div class="links">
+        <ul>
+          {% for link in links %}
+          <li>
+            <a class="link" href="{{ link.url }}">
+              {% if link.brand %}
+              <i class="fa-brands fa-{{ link.brand }}"></i>
+              {% elif link.icon %}
+              <i class="fa-solid fa-{{ link.icon }}"></i>
+              {% endif %}
+              {{ link.text }}
+            </a>
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+      {% endif %}
+
+      {% if page.footer %}
+      <div class="footer">
+        {{ page.footer }}
+      </div>
+      {% endif %}
+    </div>
+  </body>
+</html>

@@ -7,8 +7,8 @@ from pathlib import Path
 
 @dataclass
 class Link:
-    url: str
-    text: str
+    url: str = ""
+    text: str = ""
     brand: str = ""
     icon: str = ""
     extra: dict[str, str] = field(default_factory=dict)
@@ -17,10 +17,12 @@ class Link:
 @dataclass
 class Page:
     title: str = "Plinky"
-    image: str = "avatar.png"
-    tagline: str = ""
+    author: str = "Anonymous Penguin"
+    image: str = "images/avatar.png"
+    tagline: str = "A neat set of links"
     body: str = ""
     footer: str = ""
+    socials: list[Link] = field(default_factory=list)
     links: list[Link] = field(default_factory=list)
     extra: dict[str, str] = field(default_factory=dict)
 
