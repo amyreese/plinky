@@ -32,7 +32,7 @@
       </div>
 
       {% if socials %}
-      <div class="socials">
+      <div id="socials" class="socials">
         <ul>
           {% for link in socials %}
           <li>
@@ -52,13 +52,13 @@
       {% endif %}
 
       {% if page.body %}
-      <div class="body">
+      <div id="body" class="body">
         {{ page.body }}
       </div>
       {% endif %}
 
       {% if links %}
-      <div class="links">
+      <div id="links" class="links">
         <ul>
           {% for link in links %}
           <li>

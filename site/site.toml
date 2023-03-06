@@ -23,11 +23,15 @@ brand = "github"
 
 [[link]]
 url = "https://omnilib.dev"
-icon = "house"
-image = "images/favicon.png"
-text = "Omnilib Project"
+icon = "rocket"
+text = "The Omnilib Project"
 
 [[link]]
 url = "https://github.com/orgs/omnilib/repositories"
-icon = "window-maximize"
+brand = "github"
 text = "Project Repositories"
+
+[[link]]
+url = "#links"
+image = "images/avatar.png"
+text = "Link with image"

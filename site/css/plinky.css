@@ -11,7 +11,7 @@
 }
 
 :root {
-	--page-background-color: #999;
+	--page-background-color: #CCC;
 	--page-text-color: #000;
 	--page-font-family: system-ui, -apple-system, "Helvetica", "Segoe UI", "Roboto", sans-serif;
 	--page-font-size: 16px;
@@ -26,6 +26,8 @@
 	--title-font-weight: 500;
 
 	--social-icon-size: 24px;
+	--social-icon-color: #000;
+	--social-hover-icon-color: #007;
 
 	--link-background-color: #999;
 	--link-text-color: #000;
@@ -46,8 +48,15 @@
 
 @media (prefers-color-scheme: light) {
 	:root {
-		--page-background-color: #999;
+		--page-background-color: #EEE;
 		--page-text-color: #000;
+
+		--link-background-color: #333;
+		--link-text-color: #FFF;
+		--link-border-color: #333;
+		--link-hover-background-color: #CCC;
+		--link-hover-text-color: #000;
+		--link-hover-border-color: #000;
 	}
 }
 
@@ -91,6 +100,12 @@ body {
 	font-size: var(--social-icon-size);
 	list-style: none;
 }
+.socials a {
+	color: var(--social-icon-color);
+}
+.socials a:hover {
+	color: var(--social-hover-icon-color);
+}
 
 .body {
 	margin: 2em 0em;
@@ -105,10 +120,9 @@ body {
 	display: inline-block;
 	position: relative;
 	top: 0;
-	min-width: 60%;
-	max-width: 90%;
+	width: 60%;
 	border-radius: 2em;
-	padding: 0.8em;
+	padding: 1em;
 	background-color: var(--link-background-color);
 	color: var(--link-text-color);
 	text-decoration: none;
@@ -123,6 +137,9 @@ body {
 	border-style: solid;
 	border-width: 2px;
 }
+.links a p {
+	padding: 0em 2em;
+}
 .links .icon {
 	position: absolute;
 	top: 50%;
@@ -132,16 +149,16 @@ body {
 .links .icon i {
 	position: absolute;
 	top: 50%;
-	transform: translateX(-0.1em) translateY(-50%);
+	transform: translateX(-0.15em) translateY(-50%);
 	margin: 0;
-	font-size: 2em;
+	font-size: 2.2em;
 }
 .links .icon img {
 	position: absolute;
 	top: 0;
-	transform: translateX(-0.5em) translateY(-50%);
+	transform: translateX(-0.7em) translateY(-50%);
 	aspect-ratio: 1.0;
-	width: 2.5em;
+	width: 3em;
 	border-radius: 50%;
 }
 @media (max-width: 800px) {
