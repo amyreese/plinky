@@ -17,7 +17,7 @@ def render_site(config: Config) -> str:
         lstrip_blocks=True,
         trim_blocks=True,
     )
-    tpl = env.get_template("page.html.j2")
+    tpl = env.get_template("page.html")
 
     page = config.page
     page = replace(
