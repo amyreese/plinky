@@ -1,0 +1,50 @@
+
+:root {
+	--page-background-color: #CCC;
+	--page-text-color: #000;
+	--page-font-family: system-ui, -apple-system, "Helvetica", "Segoe UI", "Roboto", sans-serif;
+	--page-font-size: 16px;
+	--page-font-weight: 400;
+
+	--avatar-max-size: 256px;
+	--avatar-border-color: #000;
+	--avatar-border-radius: 50%;
+
+	--title-font-family: var(--page-font-family);
+	--title-font-size: 24px;
+	--title-font-weight: 500;
+
+	--social-icon-size: 24px;
+	--social-icon-color: #000;
+	--social-hover-icon-color: #007;
+
+	--link-background-color: #999;
+	--link-text-color: #000;
+	--link-border-color: var(--link-text-color);
+	--link-hover-background-color: #BBB;
+	--link-hover-text-color: #000;
+	--link-hover-border-color: var(--link-hover-text-color);
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--page-background-color: #333;
+		--page-text-color: #FFF;
+
+		--avatar-border-color: #FFF;
+	}
+}
+
+@media (prefers-color-scheme: light) {
+	:root {
+		--page-background-color: #EEE;
+		--page-text-color: #000;
+
+		--link-background-color: #333;
+		--link-text-color: #FFF;
+		--link-border-color: #333;
+		--link-hover-background-color: #CCC;
+		--link-hover-text-color: #000;
+		--link-hover-border-color: #000;
+	}
+}
