@@ -23,7 +23,7 @@ dev = [
     "attribution==1.6.2",
     "black==23.1.0",
     "flake8==6.0.0",
-    "flit==3.8.0",
+    "flit==3.9.0",
     "mypy==1.0.1",
     "ufmt==2.0.1",
     "usort==1.0.5",
